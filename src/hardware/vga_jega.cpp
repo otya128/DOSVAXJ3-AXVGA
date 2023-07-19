@@ -83,6 +83,8 @@ void JEGA_readFont() {
 void write_p3d5_jega(Bitu reg, Bitu val, Bitu iolen) {
 	switch (reg) {
 	case 0xb9://Mode register 1
+		if (!(val & 12)) // FIXME
+			val |= jega.RMOD1 & 12;
 		jega.RMOD1 = val;
 		break;
 	case 0xba://Mode register 2
