@@ -390,6 +390,7 @@ static void DOSBOX_RealInit(Section * sec) {
 	else if (mtype == "dosv_s3") { dos.set_dosv_enabled = true; svgaCard = SVGA_S3Trio; }
 //	else if (mtype == "vga")          { svgaCard = SVGA_S3Trio; }
 	else if (mtype == "vga")           { svgaCard = SVGA_None; }
+	else if (mtype == "axvga") { dos.set_ax_enabled = true; svgaCard = SVGA_None; }
 	else if (mtype == "svga_s3")       { svgaCard = SVGA_S3Trio; }
 	else if (mtype == "vesa_nolfb")   { svgaCard = SVGA_S3Trio; int10.vesa_nolfb = true;}
 	else if (mtype == "vesa_oldvbe")   { svgaCard = SVGA_S3Trio; int10.vesa_oldvbe = true;}
@@ -449,6 +450,7 @@ void DOSBOX_Init(void) {
 	/* Setup all the different modules making up DOSBox */
 	const char* machines[] = {
 		"hercules", "cga", "tandy", "pcjr", "ega", "jega", //for AX
+		"axvga", //for AX
 		"vga", "dcga", "dosv", "dosv_s3", "dosv_et4000",
 		"vgaonly", "svga_s3", "svga_et3000", "svga_et4000",
 		"svga_paradise", "vesa_nolfb", "vesa_oldvbe", 0 };

@@ -76,7 +76,7 @@ extern bool SDLNetInited, uselfn, autolfn;
 #define TANDY_ARCH_CASE MCH_TANDY: case MCH_PCJR
 #define EGAVGA_ARCH_CASE MCH_EGA: case MCH_VGA
 #define VGA_ARCH_CASE MCH_VGA
-#define IS_AX_ARCH (machine==MCH_EGA)// upper compatible with EGA
+#define IS_AX_ARCH (machine==MCH_EGA || machine==MCH_VGA)// upper compatible with EGA
 //#define IS_AX_ARCH (machine==MCH_AX)
 #define IS_J3_ARCH (machine==MCH_DCGA)
 
