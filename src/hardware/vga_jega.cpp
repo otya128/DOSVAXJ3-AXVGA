@@ -18,6 +18,7 @@
  */
 #include <string.h>
 #include "jega.h"//for AX
+#include "jfont.h"//for AX
 
 #include "setup.h"
 #include "vga.h"
@@ -63,6 +64,7 @@ void JEGA_readFont() {
 		chr <<= 8;
 		//fix vertical char position
 		chr |= chr_2;
+		GetDbcsFont(chr);
 		if (jega.fontIndex < 16)
 			// get font and set to register
 			jega.RDFAP = jfont_dbcs_16[chr * 32 + jega.fontIndex * 2];// w16xh16 font

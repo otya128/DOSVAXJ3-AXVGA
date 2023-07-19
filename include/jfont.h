@@ -3,6 +3,7 @@
 #define DOSBOX_JFONT_H
 
 #include "setup.h"
+#include "mem.h"
 
 void InitFontHandle();
 void QuitFont();
